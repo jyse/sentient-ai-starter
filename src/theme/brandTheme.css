@@ -1,0 +1,151 @@
+:root {
+  /* Planet colors */
+  --awareness: 262 83% 20%;
+  --awareness-bright: 262 83% 58%;
+  --acceptance: 194 75% 25%;
+  --acceptance-bright: 194 75% 45%;
+  --processing: 142 71% 25%;
+  --processing-bright: 142 71% 40%;
+  --integration: 25 85% 35%;
+  --integration-bright: 25 85% 55%;
+
+  /* Gradients */
+  --gradient-awareness: linear-gradient(
+    135deg,
+    hsl(var(--awareness)),
+    hsl(var(--awareness-bright))
+  );
+  --gradient-acceptance: linear-gradient(
+    135deg,
+    hsl(var(--acceptance)),
+    hsl(var(--acceptance-bright))
+  );
+  --gradient-processing: linear-gradient(
+    135deg,
+    hsl(var(--processing)),
+    hsl(var(--processing-bright))
+  );
+  --gradient-integration: linear-gradient(
+    135deg,
+    hsl(var(--integration)),
+    hsl(var(--integration-bright))
+  );
+}
+
+/* Later you could also add this to a themes.ts */
+.bg-brand {
+  background: #1a0d28;
+}
+
+/* Gradient utility classes */
+.bg-gradient-awareness {
+  background: linear-gradient(135deg, hsl(262, 83%, 20%), hsl(262, 83%, 58%));
+}
+
+.bg-gradient-acceptance {
+  background: linear-gradient(135deg, hsl(194, 75%, 25%), hsl(194, 75%, 45%));
+}
+
+.bg-gradient-processing {
+  background: linear-gradient(135deg, hsl(142, 71%, 25%), hsl(142, 71%, 40%));
+}
+
+.bg-gradient-reframing {
+  background: linear-gradient(135deg, hsl(45, 93%, 35%), hsl(45, 93%, 55%));
+}
+
+.bg-gradient-integration {
+  background: linear-gradient(135deg, hsl(25, 85%, 35%), hsl(25, 85%, 55%));
+}
+
+.bg-gradient-maintenance {
+  background: linear-gradient(135deg, hsl(315, 60%, 30%), hsl(315, 60%, 50%));
+}
+
+.floating-orb {
+  position: absolute;
+  border-radius: 9999px;
+  opacity: 0.6;
+  /* filter: blur(40px); */
+  animation: float 8s ease-in-out infinite;
+  background: var(--gradient-awareness);
+}
+
+.floating-orb:nth-child(2) {
+  animation-delay: -2s;
+  background: var(--gradient-acceptance);
+}
+
+.floating-orb:nth-child(3) {
+  animation-delay: -4s;
+  background: var(--gradient-processing);
+}
+
+.floating-orb:nth-child(4) {
+  animation-delay: -6s;
+  background: var(--gradient-integration);
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #ffffff33;
+  opacity: 0;
+  animation: ripple 4s ease-out infinite;
+}
+
+.centered-circle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #ffffff1a;
+  border-radius: 9999px;
+  width: 24rem;
+  height: 24rem;
+}
+
+.card-zen {
+  backdrop-filter: blur(12px);
+  background: #0f0b1e99;
+  border: 1px solid #ffffff1a;
+  border-radius: 1rem;
+  box-shadow: 0 4px 30px rgba(103, 58, 183, 0.1);
+}
+
+.bg-card {
+  background-color: #8e18e2a5;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+  }
+  75% {
+    transform: translateY(-30px) rotate(270deg);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
